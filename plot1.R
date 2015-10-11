@@ -3,7 +3,7 @@ library(dplyr)
 
 ## calculated the number of rows to download after looking at the first few rows of data.
 
-powerCon<-tbl_df(read.table("./household_power_consumption.txt", nrows=70560, sep=";", header=TRUE, na.strings=c("?")))
+powerCon <-tbl_df(read.table("./household_power_consumption.txt", nrows=70560, sep=";", header=TRUE, na.strings=c("?")))
 powerCon$Date <- as.Date(powerCon$Date, format = "%d/%m/%Y")
 powerCon$timetemp <- paste(powerCon$Date, powerCon$Time)
 powerCon$Time <- strptime(powerCon$timetemp, format = "%Y-%m-%d %H:%M:%S")
